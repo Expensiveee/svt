@@ -8,15 +8,11 @@ const fadeIn = keyframes`
 
 export const SSidebar = styled.div`
   display: flex;
-  flex-direction: column;
-  min-width: ${({ isOpen }) =>
-    !isOpen ? v.sidebarClosedWidth : v.sidebarOpenWidth};
-  max-width: ${({ isOpen }) =>
-    !isOpen ? v.sidebarClosedWidth : v.sidebarOpenWidth};
-  height: 100vh;
+  flex-direction: row;
+  width: 100%;
+  height: 60px;
   padding: ${v.mdSpacing} 0;
   background-color: ${v.sidebarBg};
-  position: fixed;
   transition: 250ms;
   box-shadow: 3px -2px 8px 0px #141414;
   overflow-x: hidden;
@@ -26,43 +22,38 @@ export const SSidebar = styled.div`
 
 export const SLogo = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: start;
   align-items: center;
   width: auto;
+  height: 100%;
   text-align: center;
-  margin: 0 auto;
-  height: ${v.sidebarClosedWidth};
   cursor: pointer;
   position: relative;
   transition: 450ms ease-in-out;
-  left: ${({ isOpen }) => (!isOpen ? "-100%" : "0")};
 
   color: #fff;
 
   h1 {
     font-size: 24px;
-    position: ${({ isOpen }) => (!isOpen ? "absolute" : "relative")};
-    top: ${({ isOpen }) => (!isOpen ? "-120%" : "0")};
-    left: ${({ isOpen }) => (!isOpen ? "-100%" : "0")};
     transition: 0;
+    border-right: 1px solid #eaeaea;
+    padding: 0 12px;
   }
 
   h2 {
     font-style: italic;
-    position: relative;
-    position: ${({ isOpen }) => (!isOpen ? "absolute" : "relative")};
-    top: ${({ isOpen }) => (!isOpen ? "-120%" : "0")};
-    left: ${({ isOpen }) => (!isOpen ? "-100%" : "0")};
-    transition: 0;
+    font-size: 16px;
+    padding: 0 12px;
+    color: #766ac4;
   }
 
-  h3 {
-    font-size: 22px;
-    position: relative;
-    top: 15px;
-    position: ${({ isOpen }) => (!isOpen ? "relative" : "absolute")};
-    left: ${({ isOpen }) => (!isOpen ? `${v.sidebarClosedWidth}` : "-100%")};
+  @media (max-width: 768px) {
+    justify-content: center !important;
+
+    h1{
+      font-size: 18px;
+    }
   }
 `;
 
@@ -71,7 +62,7 @@ export const SSidebarButton = styled.div`
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: 72px ;
+  top: 72px;
   left: ${({ isOpen }) =>
     isOpen
       ? `calc(${v.sidebarOpenWidth} - 16px)`
@@ -117,16 +108,17 @@ export const SLink = styled.div`
 
 export const SLinkPosition = styled.span`
   display: flex;
-  width: 14px;
-  height: 14px;
-  padding: ${v.mdSpacing};
+  width: 8px;
+  height: 8px;
+  padding: 10px;
+  font-size: 11px;
   justify-content: center;
   align-items: center;
   border-radius: 6px;
-  margin-right: ${({ isOpen }) => (isOpen ? v.mdSpacing : null)};
+  margin-right: ${({ isOpen }) => (isOpen ? v.smSpacing : null)};
   transition: 250ms;
   border: 1px solid ${({ isActive }) => (!isActive ? `transparent` : "#ff7f00")};
-  color: ${({ isActive }) => (!isActive ? `` : "#ff7f00")};
+  color: ${({ isActive }) => (!isActive ? `#6c747a` : "#ff7f00")};
   ${SLink}:hover & {
     color: white;
   }
@@ -139,15 +131,24 @@ export const SLinkLabel = styled.span`
   position: relative;
   animation: 450ms ${fadeIn} forwards;
   -user-select: none;
+  max-width: 90%;
+  overflow: hidden;
+  white-space: nowrap; /* Don't forget this one */
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+  font-weight: 700;
 
-  color: ${({ isActive }) => (!isActive ? `` : "white")};
+  color: ${({ isActive }) => (!isActive ? `#6c747a` : "#8c82d1")};
+  ${SLink}:hover & {
+    color: white;
+  }
 `;
 
 export const SLinkNotification = styled.div`
   font-size: 14px;
   padding: calc(${v.smSpacing} / 2) ${v.smSpacing};
   border-radius: calc(${v.borderRadius} / 2);
-  background-color: ${({ isActive }) => (!isActive ? `#4a5168` : "#ff7f00")};
+  background-color: ${({ isActive }) => (!isActive ? `#4a5168` : "#8c82d1")};
   color: ${({ isActive }) => (!isActive ? `#6e758d` : "white")};
   font-size: 12px;
   font-weight: 600;

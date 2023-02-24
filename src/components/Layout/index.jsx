@@ -1,13 +1,11 @@
 import * as S from "./styles";
 import Sidebar from "../../components/Sidebar";
 
-const Layout = ({ children }) => {
+export default function Layout({ categories, children }) {
   return (
     <S.Layout>
-      <Sidebar />
+      <Sidebar categories={categories} />
       <S.Main>{children}</S.Main>
     </S.Layout>
   );
-};
-
-export default Layout;
+}

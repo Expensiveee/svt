@@ -80,14 +80,14 @@ export const Button = (props) => {
     return (
       <S.ButtonContent {...theme} {...props}>
         <Ripple />
-        {props.value}
+        {props?.value ?? props.children}
       </S.ButtonContent>
     );
   }
 };
 
 const themes = [
-  { name: "primary", bgColor: "#ff7f00", color: "white" },
+  { name: "primary", bgColor: "#766ac4", color: "white" },
   { name: "secondary", bgColor: "rgba(0, 0, 0, 0.1)", color: "white" },
 ];
 
