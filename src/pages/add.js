@@ -11,7 +11,7 @@ const Add = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("/api/categories/add")
+      .post("https://svt.expensiveee.me/api/categories/add")
       .then((data) => {
         toast("Flashcard ajouté avec succès");
         setRecto("");

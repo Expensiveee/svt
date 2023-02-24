@@ -17,14 +17,7 @@ import axios from "axios";
 
 export default function Sidebar() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const { asPath } = useRouter();
-  const [categories, setCategories] = useState([]);
 
-  useEffect(() => {
-    axios.get("/api/categories/all").then(({ data }) => {
-      setCategories(data);
-    });
-  }, []);
 
   return (
     <SSidebar isOpen={sidebarOpen}>

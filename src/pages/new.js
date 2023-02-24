@@ -21,7 +21,7 @@ const New = () => {
     };
 
     axios
-      .post("/api/categories/new", category)
+      .post("https://svt.expensiveee.me/api/categories/new", category)
       .then(() => {
         toast("Catégorie créée avec succès");
         setCategoryName("");

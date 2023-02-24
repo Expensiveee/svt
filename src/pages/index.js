@@ -61,7 +61,7 @@ const Home = ({ data }) => {
 
 export async function getServerSideProps() {
   return axios
-    .get(`/api/categories/all`)
+    .get(`https://svt.expensiveee.me/api/categories/all`)
     .then(({ data }) => {
       return {
         props: { data },
