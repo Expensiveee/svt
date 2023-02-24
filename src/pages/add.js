@@ -35,7 +35,7 @@ const Add = () => {
 
   return (
     <S.Container>
-      <S.Title>Ajouter une flashcard à une categori</S.Title>
+      <S.Title>Ajouter une flashcard à une categorie</S.Title>
       <S.Main>
         <S.Form>
           <S.Label htmlFor="flashcardRecto">
