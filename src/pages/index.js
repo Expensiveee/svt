@@ -61,7 +61,7 @@ const Home = ({ data }) => {
 
 export async function getServerSideProps() {
   return axios
-    .get(`http://localhost:3000/api/categories/all`)
+    .get(`/api/categories/all`)
     .then(({ data }) => {
       return {
         props: { data },
