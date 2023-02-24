@@ -15,7 +15,7 @@ const Home = ({ data }) => {
 
   useEffect(() => {
     setCategories(data);
-  }, [data])
+  }, [data]);
 
   return (
     <S.Container>
@@ -69,7 +69,7 @@ export async function getServerSideProps() {
     })
     .catch((e) => {
       return {
-        notFound: true,
+        props: { data: [] },
       };
     });
 }
