@@ -82,7 +82,7 @@ export const Action = styled.div`
   width: 100%;
   padding: 1rem;
   margin: 0 auto;
-  min-height: 400px;
+  min-height: 220px;
   background-color: rgba(0, 0, 0, 0.2);
   color: #6c747a;
   letter-spacing: 0.6px;
