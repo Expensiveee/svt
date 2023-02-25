@@ -17,7 +17,7 @@ const Flashcards = ({ data }) => {
 };
 
 export async function getServerSideProps(context) {
-  // Fecth category data from http://localhost:3000/api/categories/get with slug from context params and check erros if any and return data
+  // Fecth category data from https://svt.expensiveee.me/api/categories/get with slug from context params and check erros if any and return data
   const res = await fetch(`https://svt.expensiveee.me/api/categories/get`, {
     method: "POST",
     headers: {

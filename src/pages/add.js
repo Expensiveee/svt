@@ -18,7 +18,7 @@ const Add = () => {
         setVerso("");
       })
       .catch((err) => {
-        if (err.response.data.message) return toast(err.response.data.message);
+        if (err?.response?.data?.message) return toast(err.response.data.message);
         toast(
           "Une erreur est survenue, veuillez contactez l'administrateur (Ghali qui est moi)"
         );
