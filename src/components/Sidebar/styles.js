@@ -18,6 +18,10 @@ export const SSidebar = styled.div`
   overflow-x: hidden;
   overflow-y: auto;
   z-index: 10;
+
+  @media ${v.tablet} {
+    justify-content: center;
+  }
 `;
 
 export const SLogo = styled.div`
@@ -48,10 +52,8 @@ export const SLogo = styled.div`
     color: #766ac4;
   }
 
-  @media (max-width: 768px) {
-    justify-content: center !important;
-
-    h1{
+  @media ${v.tablet} {
+    h1 {
       font-size: 18px;
     }
   }

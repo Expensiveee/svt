@@ -15,7 +15,9 @@ export default async function handler(req, res) {
     .replace(/ /g, "-")
     .replace(/[^a-z0-9-]/g, "-");
 
-  const categories = await fs.readdir(CATEGORIES_PATH);
+  const categories = await fs.readdir(CATEGORIES_PATH).catch((e) => {
+    return res.status(400).json(e);
+  });
   if (categories.find((c) => c === slug))
     return res
       .status(400)
@@ -30,16 +32,26 @@ export default async function handler(req, res) {
 
   const flashcards = {};
 
-  await fs.mkdir(path.join(CATEGORIES_PATH, category.slug));
-  await fs.writeFile(
-    path.join(CATEGORIES_PATH, category.slug, "meta.json"),
-    JSON.stringify(category)
-  );
+  await fs.mkdir(path.join(CATEGORIES_PATH, category.slug)).catch((e) => {
+    return res.status(400).json(e);
+  });
+  await fs
+    .writeFile(
+      path.join(CATEGORIES_PATH, category.slug, "meta.json"),
+      JSON.stringify(category)
+    )
+    .catch((e) => {
+      return res.status(400).json(e);
+    });
 
-  await fs.writeFile(
-    path.join(CATEGORIES_PATH, category.slug, "flashcards.json"),
-    JSON.stringify(flashcards)
-  );
+  await fs
+    .writeFile(
+      path.join(CATEGORIES_PATH, category.slug, "flashcards.json"),
+      JSON.stringify(flashcards)
+    )
+    .catch((e) => {
+      return res.status(400).json(e);
+    });
 
   res.status(200).json(category);
 }

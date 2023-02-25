@@ -11,20 +11,14 @@ import {
 } from "./styles";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import Button from "@components/Button";
-import axios from "axios";
 
 export default function Sidebar() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
-
-
   return (
-    <SSidebar isOpen={sidebarOpen}>
+    <SSidebar>
       <Link href={"/"}>
-        <SLogo isOpen={sidebarOpen}>
+        <SLogo>
           <h1>Flashcards d&apos;SVT</h1>
-          <h2>Par Ghali</h2>
+          <h2>Par Sid El Ghali</h2>
         </SLogo>
       </Link>
     </SSidebar>
