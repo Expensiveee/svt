@@ -18,7 +18,7 @@ export default function Sidebar() {
       <Link href={"/"}>
         <SLogo>
           <h1>Flashcards d&apos;SVT</h1>
-          <h2>Par Sid El Ghali</h2>
+          <h2>Powered by Ghali</h2>
         </SLogo>
       </Link>
     </SSidebar>
