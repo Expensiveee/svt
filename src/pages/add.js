@@ -12,11 +12,26 @@ const Add = ({ data }) => {
   const [verso, setVerso] = useState("");
 
   const handleSelectedCategory = (e) => {
+    console.log(e.target.value);
     setSelectedCategory(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (selectedCategory === "") {
+      toast("Veuillez sélectionner une catégorie");
+      return;
+    }
+
+    if (recto === "") {
+      toast("Veuillez entrer un recto");
+      return;
+    }
+
+    if (verso === "") {
+      toast("Veuillez entrer un verso");
+      return;
+    }
     axios
       .post("https://svt.expensiveee.me/api/addFlashcard", {
         slug: selectedCategory,
@@ -48,6 +63,7 @@ const Add = ({ data }) => {
         <S.Form>
           <S.Label htmlFor="categoryName">Nom de la catégorie</S.Label>
           <S.Select onChange={handleSelectedCategory}>
+            <option value={""}>-----------------</option>
             {categories.map((category, i) => {
               console.log(category);
               return (

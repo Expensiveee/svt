@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {v} from "@styles/variables";
 
 export const Container = styled.div`
   display: flex;
@@ -124,6 +125,10 @@ export const ActionTitle = styled.h2`
       opacity: 1;
     }
   }
+  @media ${v.mobileL} {
+    width: 100%;
+    font-size: 12px;
+  }
 `;
 
 export const ActionDescription = styled.p`
@@ -145,17 +150,21 @@ export const ActionDescription = styled.p`
       opacity: 1;
     }
   }
+
+  @media ${v.mobileL} {
+    width: 100%;
+    font-size: 12px;
+  }
 `;
 
 export const ActionCount = styled.p`
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #fff;
   text-align: center;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 8px;
   text-transform: capitalize;
-  letter-spacing: 0.1rem;
-  font-weight: 800;
+  font-weight: 300;
   position: relative;
   z-index: 1;
   animation: 1s ease-in-out 0s 1 normal none running fadein;

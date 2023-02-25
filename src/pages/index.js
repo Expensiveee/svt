@@ -12,6 +12,7 @@ const Home = ({ data }) => {
         description:
           "Crée une catégorie en cliquant sur le bouton du haut à gauche!",
         slug: "/",
+        count: 999999,
       },
     },
   ]);

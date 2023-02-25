@@ -1,11 +1,11 @@
 import connectMongo from "@utils/connectMongo";
 import Category from "@utils/models/category";
 
-export default async function getCategory(req, res) {
-  const { slug } = req.body;
+export default async function editStatistics(req, res) {
+  const { slug, correct, wrong } = req.body;
 
   if (!slug)
-    return res.status(400).json({ error: "Des informations sont manquantes" });
+    return res.status(400).json({ error: "Des informations sont manquantes"});
 
   try {
     await connectMongo();
@@ -13,7 +13,11 @@ export default async function getCategory(req, res) {
     if (!category)
       return res.status(400).json({ error: "Catégorie pas trouvé" });
 
-    console.log(category);
+    category.statistics.correct = correct;
+    category.statistics.wrong = wrong;
+
+    await category.save();
+
     res.status(200).json(category);
   } catch (error) {
     res.status(400).json({ error });

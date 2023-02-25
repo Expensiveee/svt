@@ -11,6 +11,10 @@ const categorySchema = new Schema({
     description: String,
     count: Number,
   },
+  statistics: {
+    correct: Number,
+    wrong: Number,
+  },
   flashcards: [
     {
       type: Object,

@@ -21,6 +21,10 @@ export default async function createCategory(req, res) {
         description,
         count: 0,
       },
+      statistics: {
+        correct: 0,
+        wrong: 0,
+      },
       flashcards: [],
     });
     await category.save();
