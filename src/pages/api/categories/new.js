@@ -33,7 +33,7 @@ export default async function handler(req, res) {
   const flashcards = {};
 
   await fs.mkdir(path.join(CATEGORIES_PATH, category.slug)).catch((e) => {
-    return res.status(400).json(e);
+    return res.status(400).json({ message: "ERREUR AKHI" });
   });
   await fs
     .writeFile(
@@ -41,7 +41,7 @@ export default async function handler(req, res) {
       JSON.stringify(category)
     )
     .catch((e) => {
-      return res.status(400).json(e);
+      return res.status(400).json({ message: "erreur 2 akhi" });
     });
 
   await fs
