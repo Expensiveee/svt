@@ -147,14 +147,15 @@ export const CardActions = styled.div`
   }
 `;
 
-export const CardAnswer = styled.div`
+export const CardAnswer = styled.span`
   display: flex;
   flex-direction: row;
+  white-space: pre-line;
   justify-content: center;
   position: relative;
   width: 100%;
   padding: 1rem 2rem;
-  height: auto;
+  overflow-y: auto;
   overflow-wrap: anywhere;
   left: -20px:
   opacity: 0;

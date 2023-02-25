@@ -11,6 +11,7 @@ export const SSidebar = styled.div`
   flex-direction: row;
   width: 100%;
   height: 60px;
+  justify-content: center;
   padding: ${v.mdSpacing} 0;
   background-color: ${v.sidebarBg};
   transition: 250ms;
@@ -27,27 +28,26 @@ export const SSidebar = styled.div`
 export const SLogo = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: start;
+  justify-content: space-between;
   align-items: center;
-  width: auto;
+  width: 100%;
   height: 100%;
-  text-align: center;
   cursor: pointer;
   position: relative;
   transition: 450ms ease-in-out;
+  padding: 0 2rem;
 
   color: #fff;
 
   h1 {
     font-size: 24px;
     transition: 0;
-    border-right: 1px solid #eaeaea;
     padding: 0 12px;
   }
 
   h2 {
     font-style: italic;
-    font-size: 16px;
+    font-size: 12px;
     padding: 0 12px;
     color: #766ac4;
   }
@@ -55,6 +55,10 @@ export const SLogo = styled.div`
   @media ${v.tablet} {
     h1 {
       font-size: 18px;
+    }
+
+    h2{
+      font-size: 8px;
     }
   }
 `;
