@@ -45,7 +45,7 @@ export const Main = styled.main`
   width: 100%;
   padding: 1rem;
   margin: 0 auto;
-  max-width: 1200px;
+
   background-color: #222530;
   color: #6c747a;
   letter-spacing: 0.6px;
@@ -58,21 +58,18 @@ export const Main = styled.main`
 
 export const Actions = styled.div`
   display: flex;
-  gap: 12px;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  width: auto;
+  justify-content: space-between;
+  width: 100%;
   padding: 1rem;
   margin: 0 auto;
-  max-width: 1200px;
-  color: #6c747a;
-  letter-spacing: 0.6px;
-  overflow-x: hidden;
+  gap: 1rem;
 
   @media (max-width: 768px) {
-    max-width: 100%;
     flex-direction: column;
+    width: 100%;
   }
 `;
 
@@ -81,10 +78,10 @@ export const Action = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: auto;
+  max-width: calc(100% / 2 - 1rem);
+  width: 100%;
   padding: 1rem;
   margin: 0 auto;
-  max-width: 1200px;
   min-height: 400px;
   background-color: rgba(0, 0, 0, 0.2);
   color: #6c747a;
@@ -93,14 +90,17 @@ export const Action = styled.div`
   border-radius: 5px;
   transition: all 0.3s ease-in-out;
   cursor: pointer;
+  position: relative;
 
   :hover {
     background-color: rgba(0, 0, 0, 0.4);
   }
 
   @media (max-width: 768px) {
-    width: 100vw;
-    height: 100px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 350px;
   }
 `;
 
@@ -137,6 +137,38 @@ export const ActionDescription = styled.p`
   position: relative;
   z-index: 1;
   animation: 1s ease-in-out 0s 1 normal none running fadein;
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+`;
+
+export const ActionCount = styled.p`
+  font-size: 1.5rem;
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+  padding: 1rem;
+  text-transform: capitalize;
+  letter-spacing: 0.1rem;
+  font-weight: 800;
+  position: relative;
+  z-index: 1;
+  animation: 1s ease-in-out 0s 1 normal none running fadein;
+  transition: all 0.3s ease-in-out;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  ${Action}:hover & {
+    background-color: #766ac4;
+  }
+
   @keyframes fadein {
     from {
       opacity: 0;

@@ -13,12 +13,11 @@ const Flashcards = ({ data }) => {
     return <p>404</p>;
   }
 
-  return <p>Post: {JSON.stringify(data)}</p>;
+  return <p>Post: {JSON.stringify(data, null, 4)}</p>;
 };
 
 export async function getServerSideProps(context) {
-  // Fecth category data from https://svt.expensiveee.me/api/categories/get with slug from context params and check erros if any and return data
-  const res = await fetch(`https://svt.expensiveee.me/api/categories/get`, {
+  const res = await fetch("https://svt.expensiveee.me/api/getAllCategories", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

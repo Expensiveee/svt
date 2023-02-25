@@ -1,27 +1,35 @@
-import { useState } from "react";
 import * as S from "@styles/new";
 import Button from "@components/Button";
 import { toast } from "react-toastify";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
-const Add = () => {
+const Add = ({ data }) => {
+  const [categories, setCategories] = useState(data);
+
+  const [selectedCategory, setSelectedCategory] = useState("");
   const [recto, setRecto] = useState("");
   const [verso, setVerso] = useState("");
+
+  const handleSelectedCategory = (e) => {
+    setSelectedCategory(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("https://svt.expensiveee.me/api/categories/add")
-      .then((data) => {
+      .post("https://svt.expensiveee.me/api/addFlashcard", {
+        slug: selectedCategory,
+        flashcard: { recto, verso },
+      })
+      .then(() => {
         toast("Flashcard ajouté avec succès");
         setRecto("");
         setVerso("");
       })
       .catch((err) => {
-        if (err?.response?.data?.message) return toast(err.response.data.message);
-        toast(
-          "Une erreur est survenue, veuillez contactez l'administrateur (Ghali qui est moi)"
-        );
+        if (err?.response?.data?.error)
+          return toast(err?.response?.data?.error ?? "Une erreur est survenue");
       });
   };
 
@@ -38,6 +46,17 @@ const Add = () => {
       <S.Title>Ajouter une flashcard à une categorie</S.Title>
       <S.Main>
         <S.Form>
+          <S.Label htmlFor="categoryName">Nom de la catégorie</S.Label>
+          <S.Select onChange={handleSelectedCategory}>
+            {categories.map((category, i) => {
+              console.log(category);
+              return (
+                <option key={i} value={category.meta.slug}>
+                  {category.meta.name}
+                </option>
+              );
+            })}
+          </S.Select>
           <S.Label htmlFor="flashcardRecto">
             Recto de la flashcard (requis)
           </S.Label>
@@ -76,5 +95,20 @@ const Add = () => {
     </S.Container>
   );
 };
+
+export async function getServerSideProps() {
+  return axios
+    .get("https://svt.expensiveee.me/api/getAllCategories")
+    .then(({ data }) => {
+      return {
+        props: { data },
+      };
+    })
+    .catch((e) => {
+      return {
+        props: { data: [] },
+      };
+    });
+}
 
 export default Add;

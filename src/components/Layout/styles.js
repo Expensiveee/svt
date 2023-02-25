@@ -17,6 +17,5 @@ export const Main = styled.div`
   justify-content: center;
   height: auto;
   min-height: 100vh;
-  padding: ${v.smSpacing} ${v.mdSpacing};
-  
+  padding: ${v.smSpacing} ${v.lgSpacing};
 `;

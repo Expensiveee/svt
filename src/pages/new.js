@@ -21,14 +21,15 @@ const New = () => {
     };
 
     axios
-      .post("https://svt.expensiveee.me/api/categories/new", category)
+      .post("https://svt.expensiveee.me/api/createCategory", category)
       .then(() => {
         toast("Catégorie créée avec succès");
         setCategoryName("");
         setCategoryDescription("");
       })
       .catch((err) => {
-        if(err?.response?.data?.message) return toast(err.response.data.message);
+        if (err?.response?.data?.error)
+          return toast(err?.response?.data?.error);
         toast(
           "Une erreur est survenue, veuillez contactez l'administrateur (Ghali qui est moi)"
         );
@@ -48,7 +49,7 @@ const New = () => {
       <S.Title>Crée une nouvelle catégorie</S.Title>
       <S.Main>
         <S.Form>
-          <S.Label htmlFor="categoryName">Nom de la catégorie (requis)</S.Label>
+          <S.Label htmlFor="categoryName">Nom de la catégorie</S.Label>
           <S.Input
             type="text"
             id="categoryName"

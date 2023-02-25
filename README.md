@@ -16,9 +16,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [https://svt.expensiveee.me/api/hello](https://svt.expensiveee.me/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [https://svt.expensiveee.mehttps://svt.expensiveee.me/api/hello](https://svt.expensiveee.mehttps://svt.expensiveee.me/api/hello). This endpoint can be edited in `pageshttps://svt.expensiveee.me/api/hello.js`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+The `pages/api` directory is mapped to `https://svt.expensiveee.me/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
