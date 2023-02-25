@@ -30,7 +30,6 @@ export const GlobalStyle = createGlobalStyle`
       min-height: 100vh;
       background-color: #222530;
       color: #6c747a;
-      letter-spacing: .6px;
       overflow-x: hidden;
       font-family: 'Poppins', sans-serif;
    }

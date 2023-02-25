@@ -307,7 +307,6 @@ export const CardResultsItemValue = styled.h1`
   margin: 0;
   padding: 1rem 2rem;
   text-align: left;
-  letter-spacing: 0.1rem;
   font-weight: 700;
   position: relative;
   z-index: 1;

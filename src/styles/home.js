@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {v} from "@styles/variables";
+import { v } from "@styles/variables";
 
 export const Container = styled.div`
   display: flex;
@@ -8,7 +8,6 @@ export const Container = styled.div`
   width: 100%;
   background-color: #222530;
   color: #6c747a;
-  letter-spacing: 0.6px;
   overflow-x: hidden;
 `;
 
@@ -35,6 +34,7 @@ export const Title = styled.h1`
   }
 
   @media (max-width: 768px) {
+    font-size: 1.5rem;
     text-align: center;
   }
 `;
@@ -49,7 +49,6 @@ export const Main = styled.main`
 
   background-color: #222530;
   color: #6c747a;
-  letter-spacing: 0.6px;
   overflow-x: hidden;
 
   @media (max-width: 768px) {
@@ -71,6 +70,7 @@ export const Actions = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     width: 100%;
+    padding: 0;
   }
 `;
 
@@ -86,7 +86,6 @@ export const Action = styled.div`
   min-height: 220px;
   background-color: rgba(0, 0, 0, 0.2);
   color: #6c747a;
-  letter-spacing: 0.6px;
   overflow-x: hidden;
   border-radius: 5px;
   transition: all 0.3s ease-in-out;
@@ -102,6 +101,7 @@ export const Action = styled.div`
     max-width: 100%;
     min-width: 100%;
     min-height: 350px;
+    padding: .5rem;
   }
 `;
 
@@ -127,7 +127,8 @@ export const ActionTitle = styled.h2`
   }
   @media ${v.mobileL} {
     width: 100%;
-    font-size: 12px;
+    font-size: 20px;
+    padding: 0;
   }
 `;
 
