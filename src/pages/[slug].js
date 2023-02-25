@@ -15,29 +15,33 @@ const Category = ({ data }) => {
           <S.StatisticValue color="#9b32a8">{data.meta.count}</S.StatisticValue>
         </S.Statistic>
         <S.Statistic>
-          <S.StatisticTitle>Nombre de bonnes réponses précédentes</S.StatisticTitle>
+          <S.StatisticTitle>
+            Nombre de bonnes réponses précédentes
+          </S.StatisticTitle>
           <S.StatisticValue color="#32a852">
             {data.statistics.correct}
           </S.StatisticValue>
         </S.Statistic>
         <S.Statistic>
-          <S.StatisticTitle>Nombre de mauvaises réponses précédentes</S.StatisticTitle>
+          <S.StatisticTitle>
+            Nombre de mauvaises réponses précédentes
+          </S.StatisticTitle>
           <S.StatisticValue color="#a83232">
             {data.statistics.wrong}
           </S.StatisticValue>
         </S.Statistic>
       </S.Statistics>
       <S.Actions>
-        <S.Action onClick={() => router.push("/add")}>
-          <S.ActionTitle>Ajouter des flashcards</S.ActionTitle>
-          <S.ActionDescription>
-            Ajoutez des flashcards à cette catégorie.
-          </S.ActionDescription>
-        </S.Action>
         <S.Action onClick={() => router.push("review/" + data.meta.slug)}>
           <S.ActionTitle>Commencer à réviser</S.ActionTitle>
           <S.ActionDescription>
             Commencez à réviser les flashcards de cette catégorie.
+          </S.ActionDescription>
+        </S.Action>
+        <S.Action onClick={() => router.push("/add")}>
+          <S.ActionTitle>Ajouter des flashcards</S.ActionTitle>
+          <S.ActionDescription>
+            Ajoutez des flashcards à cette catégorie.
           </S.ActionDescription>
         </S.Action>
       </S.Actions>
