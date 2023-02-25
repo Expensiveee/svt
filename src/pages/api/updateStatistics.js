@@ -13,8 +13,8 @@ export default async function editStatistics(req, res) {
     if (!category)
       return res.status(400).json({ error: "Catégorie pas trouvé" });
 
-    category.statistics.correct = correct;
-    category.statistics.wrong = wrong;
+    category.statistics.correct += correct;
+    category.statistics.wrong += wrong;
 
     await category.save();
 
