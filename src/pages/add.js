@@ -94,6 +94,7 @@ const Add = ({ data }) => {
             name="flashcardVerso"
             value={verso}
             onChange={handleVerso}
+            height="100px"
             placeholder="Exemple: L'acétylcholine"
           />
 

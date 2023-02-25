@@ -95,12 +95,13 @@ export const Label = styled.label`
   }
 `;
 
-export const Input = styled.input`
+export const Input = styled.textarea`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: auto;
   min-width: 100%;
+  height: ${(props) => (props.height ? props.height : "auto")}};
   padding: 1rem;
   background-color: #222530;
   color: #fff;
@@ -108,6 +109,7 @@ export const Input = styled.input`
   outline: none;
   border: none;
   margin-bottom: 1.7rem;
+  resize: none;
 
   :placeholder {
     color: #6c747a;
