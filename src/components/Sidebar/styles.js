@@ -43,13 +43,14 @@ export const SLogo = styled.div`
     font-size: 24px;
     transition: 0;
     padding: 0 12px;
+    color: #766ac4;
   }
 
   h2 {
     font-style: italic;
     font-size: 12px;
     padding: 0 12px;
-    color: #766ac4;
+    color: #eaeaae;
   }
 
   @media ${v.tablet} {
