@@ -112,6 +112,10 @@ export const CardTitle = styled.h1`
     }
   }
 
+  :first-letter {
+    text-transform: uppercase;
+    }
+
   @media ${v.tablet} {
     width: 100%;
     font-size: 1rem;
