@@ -20,15 +20,15 @@ export default async function getCategory(req, res) {
         },
         meta: {
           count: flashcards.flat().length,
-          name: "Toutes les catégories de Flashcard !",
-          description: "La catégorie qui tue",
+          name: "Tous les paquets de Flashcards!",
+          description: "Le paquet qui tue",
           slug: "/all",
         }
       });
     } else {
       const category = await Category.findOne({ "meta.slug": slug });
       if (!category)
-        return res.status(400).json({ error: "Catégorie pas trouvé" });
+        return res.status(400).json({ error: "Chapitre pas trouvé" });
 
       category.flashcards = category.flashcards.sort(() => Math.random() - 0.5);
 

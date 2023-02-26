@@ -35,13 +35,13 @@ const Category = ({ data }) => {
         <S.Action onClick={() => router.push("review/" + data.meta.slug)}>
           <S.ActionTitle>Commencer à réviser</S.ActionTitle>
           <S.ActionDescription>
-            Commencez à réviser les flashcards de cette catégorie.
+            Commencez à réviser les flashcards de ce chapitre.
           </S.ActionDescription>
         </S.Action>
         <S.Action onClick={() => router.push("/add")}>
           <S.ActionTitle>Ajouter des flashcards</S.ActionTitle>
           <S.ActionDescription>
-            Ajoutez des flashcards à cette catégorie.
+            Ajoutez des flashcards à un chapitre.
           </S.ActionDescription>
         </S.Action>
       </S.Actions>

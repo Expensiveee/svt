@@ -9,7 +9,7 @@ export default async function addFlashcard(req, res) {
   try {
     await connectMongo();
     const category = await Category.findOne({ "meta.slug": slug });
-    if (!category) return res.status(400).json({ error: "Catégorie pas trouvé" });
+    if (!category) return res.status(400).json({ error: "Chapitre pas trouvé" });
     category.flashcards.push(req.body.flashcard);
     category.meta.count = category.flashcards.length;
 

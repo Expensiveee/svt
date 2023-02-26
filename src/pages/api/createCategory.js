@@ -31,7 +31,7 @@ export default async function createCategory(req, res) {
     res.status(200).json(category);
   } catch (error) {
     if (error.code === 11000)
-      return res.status(400).json({ error: "Catégorie déjà existante" });
+      return res.status(400).json({ error: "Chapitre déjà existante" });
 
     res.status(400).json({ error });
   }

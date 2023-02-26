@@ -11,7 +11,7 @@ export default async function editStatistics(req, res) {
     await connectMongo();
     const category = await Category.findOne({ "meta.slug": slug });
     if (!category)
-      return res.status(400).json({ error: "Catégorie pas trouvé" });
+      return res.status(400).json({ error: "Chapitre pas trouvé" });
 
     category.statistics.correct += correct;
     category.statistics.wrong += wrong;

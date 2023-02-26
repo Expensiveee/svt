@@ -19,7 +19,7 @@ const Add = ({ data }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (selectedCategory === "") {
-      toast("Veuillez sélectionner une catégorie");
+      toast("Veuillez sélectionner un chapitre");
       return;
     }
 
@@ -61,13 +61,13 @@ const Add = ({ data }) => {
       <S.Title>Ajouter une flashcard à une categorie</S.Title>
       <S.Main>
         <S.Form>
-          <S.Label htmlFor="categoryName">Nom de la catégorie</S.Label>
+          <S.Label htmlFor="categoryName">Chapitre</S.Label>
           <S.Select onChange={handleSelectedCategory}>
             <option value={""}>-----------------</option>
             {categories.map((category, i) => {
               return (
                 <option key={i} value={category.meta.slug}>
-                  {category.meta.name} - {category.meta.description}
+                  {category.meta.name}
                 </option>
               );
             })}

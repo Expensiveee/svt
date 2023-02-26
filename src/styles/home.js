@@ -11,31 +11,45 @@ export const Container = styled.div`
   overflow-x: hidden;
 `;
 
-export const Title = styled.h1`
-  font-size: 2rem;
-  color: #fff;
-  text-align: left;
+export const Title = styled.div`
   width: 100%;
-  margin: 0 auto;
   padding: 1rem;
-  text-transform: capitalize;
-  letter-spacing: 0.1rem;
-  font-weight: 700;
-  position: relative;
-  z-index: 1;
-  animation: 1s ease-in-out 0s 1 normal none running fadein;
-  @keyframes fadein {
-    from {
-      opacity: 0;
+  h1 {
+    font-size: 2rem;
+    color: #fff;
+    text-align: left;
+    width: 100%;
+    margin: 0 auto;
+    text-transform: capitalize;
+    letter-spacing: 0.1rem;
+    font-weight: 700;
+    position: relative;
+    z-index: 1;
+    animation: 1s ease-in-out 0s 1 normal none running fadein;
+    @keyframes fadein {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
     }
-    to {
-      opacity: 1;
+    span {
+      color: #766ac4;
+      font-weight: 800;
     }
   }
 
   @media (max-width: 768px) {
-    font-size: 1.5rem;
-    text-align: center;
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    h2 {
+      font-size: 1rem;
+      text-align: center;
+    }
   }
 `;
 
@@ -101,7 +115,7 @@ export const Action = styled.div`
     max-width: 100%;
     min-width: 100%;
     min-height: 350px;
-    padding: .5rem;
+    padding: 0.5rem;
   }
 `;
 

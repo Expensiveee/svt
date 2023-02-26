@@ -1,16 +1,41 @@
 import * as S from "@styles/home";
 import axios from "axios";
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import Router from "next/router";
+
+const Count = () => {
+  const bac = new Date(1679342064000);
+  const now = new Date();
+  const diff = bac - now;
+  const [days, setDays] = useState(Math.floor(diff / (1000 * 60 * 60 * 24)));
+  const [hours, setHours] = useState(Math.floor((diff / (1000 * 60 * 60)) % 24));
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const bac = new Date(1679342064000);
+      const now = new Date();
+      const diff = bac - now;
+      setDays(Math.floor(diff / (1000 * 60 * 60 * 24)));
+      setHours(Math.floor((diff / (1000 * 60 * 60)) % 24));
+    }, 1000);
+    return () => clearInterval(interval);
+  }, []);
+    
+
+  return (
+    <>
+      {days} jours et {hours} heures
+    </>
+  );
+};
 
 const Home = ({ data }) => {
   const [categories, setCategories] = useState([
     {
       meta: {
-        name: "Pas de catégorie de Flashcard",
+        name: "Pas de chapitre à réviser:/",
         description:
-          "Crée une catégorie en cliquant sur le bouton du haut à gauche!",
+          "Crée un deck de flashcards en cliquant sur le bouton du haut à gauche!",
         slug: "/",
         count: 999999,
       },
@@ -22,8 +47,8 @@ const Home = ({ data }) => {
     setCategories([
       {
         meta: {
-          name: "Toutes les catégories de Flashcard !",
-          description: "La catégorie qui tue",
+          name: "Toutes les flashcards de tout les chapitres",
+          description: "Tout les chapitres réunis en un seul !",
           slug: "/all",
           count: 999999,
         },
@@ -34,23 +59,33 @@ const Home = ({ data }) => {
 
   return (
     <S.Container>
-      <S.Title>Bienvenue, bonne révision !</S.Title>
+      <S.Title>
+        <h1>
+          Plus que{" "}
+          <span>
+            <Count />
+          </span>{" "}
+          avant le <span>Jour J</span>. Bonne chance !
+        </h1>
+      </S.Title>
       <S.Actions>
         <S.Action onClick={() => Router.push("/new")}>
-          <S.ActionTitle>Créer une nouvelle catégorie</S.ActionTitle>
+          <S.ActionTitle>Crée un paquet</S.ActionTitle>
           <S.ActionDescription>
-            Créez une nouvelle categorie pour organiser de nouvelles flashcards.
+            Créez un paquet de flashcards pour réviser un chapitre.
           </S.ActionDescription>
         </S.Action>
         <S.Action onClick={() => Router.push("/add")}>
-          <S.ActionTitle>Ajouter des flashcards à une categorie</S.ActionTitle>
+          <S.ActionTitle>Ajouter une flashcard</S.ActionTitle>
           <S.ActionDescription>
-            Ajoutez des flashcards à une catégorie existante.
+            Ajoutez des flashcards à un chapitre.
           </S.ActionDescription>
         </S.Action>
       </S.Actions>
 
-      <S.Title>Catégories de Flashcards</S.Title>
+      <S.Title>
+        <h1>Chapitres</h1>
+      </S.Title>
       <S.Actions>
         {categories.map(({ meta }, i) => (
           <S.Action key={i} onClick={() => Router.push(meta.slug)}>
