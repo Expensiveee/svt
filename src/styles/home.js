@@ -11,17 +11,46 @@ export const Container = styled.div`
   overflow-x: hidden;
 `;
 
+export const HeroTitle = styled.h1`
+  font-size: 3rem;
+  color: #fff;
+  padding: 1rem;
+  text-align: left;
+  width: 100%;
+  margin: 0 auto;
+  text-transform: capitalize;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
+  animation: 1s ease-in-out 0s 1 normal none running fadein;
+  @keyframes fadein {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+  }
+`;
+
 export const Title = styled.div`
   width: 100%;
   padding: 1rem;
+
   h1 {
-    font-size: 2rem;
+    font-size: 1.2rem;
     color: #fff;
     text-align: left;
     width: 100%;
     margin: 0 auto;
     text-transform: capitalize;
-    letter-spacing: 0.1rem;
     font-weight: 700;
     position: relative;
     z-index: 1;
@@ -43,11 +72,6 @@ export const Title = styled.div`
   @media (max-width: 768px) {
     h1 {
       font-size: 1.5rem;
-      text-align: center;
-    }
-
-    h2 {
-      font-size: 1rem;
       text-align: center;
     }
   }
@@ -124,7 +148,6 @@ export const ActionTitle = styled.h2`
   color: #fff;
   text-align: center;
   margin: 0 auto;
-  padding: 1rem;
   text-transform: capitalize;
   letter-spacing: 0.1rem;
   font-weight: 800;
@@ -151,7 +174,7 @@ export const ActionDescription = styled.p`
   color: #6c747a;
   text-align: center;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0.5rem;
   text-transform: capitalize;
   font-weight: 300;
   position: relative;

@@ -44,7 +44,8 @@ export const Title = styled.h1`
   text-align: left;
   width: 100%;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 0 1rem;
+  margin-top: 1rem;
   text-transform: capitalize;
   letter-spacing: 0.1rem;
   font-weight: 700;
@@ -137,7 +138,6 @@ export const ActionTitle = styled.h2`
   color: #fff;
   text-align: center;
   margin: 0 auto;
-  padding: 1rem;
   text-transform: capitalize;
   letter-spacing: 0.1rem;
   font-weight: 800;
@@ -164,7 +164,7 @@ export const ActionDescription = styled.p`
   color: #6c747a;
   text-align: center;
   margin: 0 auto;
-  padding: 1rem;
+  padding: .5rem;
   text-transform: capitalize;
   font-weight: 300;
   position: relative;
