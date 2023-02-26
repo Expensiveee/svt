@@ -1,7 +1,7 @@
 import * as S from "@styles/new";
 import Button from "@components/Button";
 import { toast } from "react-toastify";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import axios from "axios";
 
 const Add = ({ data }) => {
@@ -65,10 +65,9 @@ const Add = ({ data }) => {
           <S.Select onChange={handleSelectedCategory}>
             <option value={""}>-----------------</option>
             {categories.map((category, i) => {
-              console.log(category);
               return (
                 <option key={i} value={category.meta.slug}>
-                  {category.meta.name}
+                  {category.meta.name} - {category.meta.description}
                 </option>
               );
             })}
