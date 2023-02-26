@@ -9,14 +9,31 @@ export default async function getCategory(req, res) {
 
   try {
     await connectMongo();
-    const category = await Category.findOne({ "meta.slug": slug });
-    if (!category)
-      return res.status(400).json({ error: "Catégorie pas trouvé" });
+    if (slug === "all") {
+      const categories = await Category.find();
+      const flashcards = categories.map((category) => category.flashcards);
+      return res.status(200).json({
+        flashcards: flashcards.flat().sort(() => Math.random() - 0.5),
+        statistics: {
+          correct: 0,
+          wrong: 0,
+        },
+        meta: {
+          count: flashcards.length,
+          name: "Toutes les catégories de Flashcard !",
+          description: "La catégorie qui tue",
+          slug: "/all",
+        }
+      });
+    } else {
+      const category = await Category.findOne({ "meta.slug": slug });
+      if (!category)
+        return res.status(400).json({ error: "Catégorie pas trouvé" });
 
-    // Shuffle category flashcards order and return them
-    category.flashcards = category.flashcards.sort(() => Math.random() - 0.5);
-    
-    res.status(200).json(category);
+      category.flashcards = category.flashcards.sort(() => Math.random() - 0.5);
+
+      res.status(200).json(category);
+    }
   } catch (error) {
     res.status(400).json({ error });
   }

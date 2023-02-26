@@ -18,8 +18,18 @@ const Home = ({ data }) => {
   ]);
 
   useEffect(() => {
-    if(data?.length === 0) return;
-    setCategories(data);
+    if (data?.length === 0) return;
+    setCategories([
+      {
+        meta: {
+          name: "Toutes les catégories de Flashcard !",
+          description: "La catégorie qui tue",
+          slug: "/all",
+          count: 999999,
+        },
+      },
+      ...data,
+    ]);
   }, [data]);
 
   return (
