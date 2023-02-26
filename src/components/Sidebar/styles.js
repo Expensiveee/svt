@@ -47,7 +47,6 @@ export const SLogo = styled.div`
   }
 
   h2 {
-    font-style: italic;
     font-size: 14px;
     padding: 0 12px;
     color: #fff;
