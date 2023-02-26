@@ -46,6 +46,7 @@ export const Description = styled.p`
   padding: 0 1rem;
   text-transform: capitalize;
   font-weight: 700;
+  margin-bottom: 3rem;
   position: relative;
   z-index: 1;
   animation: 1s ease-in-out 0s 1 normal none running fadein;
@@ -70,7 +71,8 @@ export const Card = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  width: 600px;
+  min-width: 600px;
+  width: 50%;
   height: auto;
   min-height: 400px;
   margin: 0 auto;
@@ -78,6 +80,8 @@ export const Card = styled.div`
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 0.5rem;
   position: relative;
+  border-radius: 2.5rem 0.5rem 2.5rem 0;
+
 
 
   @media ${v.tablet} {
@@ -90,31 +94,23 @@ export const Card = styled.div`
 export const CardTitle = styled.h1`
   font-size: 2rem;
   color: #fff;
-  width: 95%;
+  width: 100%;
   height: auto;
   overflow-wrap: anywhere;
   margin: 0;
   padding: 1rem 2rem;
+  padding-right: 40px;
   text-align: left;
   letter-spacing: 0.1rem;
   font-weight: 700;
+  background: rgba(1, 1, 1, 0.4);
+  border-radius: 2.5rem 0.5rem 0 0;
   position: relative;
   z-index: 1;
-  animation: 1s ease-in-out 0s 1 normal none running fadein;
-
-  @keyframes fadein {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
-  }
-
+  
   :first-letter {
     text-transform: uppercase;
-    }
+    }   
 
   @media ${v.tablet} {
     width: 100%;
@@ -132,7 +128,8 @@ export const CardActions = styled.div`
   overflow-x: hidden;
   background: rgba(1, 1, 1, 0.4);
   gap: 0;
-  border-radius: 0 0 0.5rem 0.5rem;
+  border-radius: 0 0 2.5rem 0.5rem;
+  
 
   button {
     padding: 8px 0;
@@ -158,10 +155,10 @@ export const CardAnswer = styled.span`
   justify-content: center;
   position: relative;
   width: 100%;
+  max-height: 200px;
   padding: 1rem 2rem;
   overflow-y: auto;
   overflow-wrap: anywhere;
-  left: -20px:
   opacity: 0;
   animation: 250ms ease-in-out fadein forwards;
     @keyframes fadein {

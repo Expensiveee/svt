@@ -16,6 +16,8 @@ export const Main = styled.div`
   width: 100%;
   justify-content: center;
   height: auto;
+  max-width: 1600px;
+  margin: 0 auto;
   min-height: calc(100vh - ${v.navbarHeight});
   padding: ${v.smSpacing} ${v.lgSpacing};
 `;
