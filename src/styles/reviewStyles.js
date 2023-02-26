@@ -71,7 +71,6 @@ export const Card = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  min-width: 600px;
   width: 50%;
   height: auto;
   min-height: 400px;
@@ -87,7 +86,7 @@ export const Card = styled.div`
   @media ${v.tablet} {
     width: 100%;
     padding: 0;
-    margin-top 4rem;
+    margin-top 1rem;
   }
 `;
 
@@ -115,7 +114,7 @@ export const CardTitle = styled.h1`
   @media ${v.tablet} {
     width: 100%;
     font-size: 1rem;
-    padding: 2.5rem 1rem 0 1rem;
+    padding: 2.5rem 1rem;
   }
 `;
 
