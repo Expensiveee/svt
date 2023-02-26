@@ -63,7 +63,7 @@ const Home = ({ data }) => {
         <S.Action onClick={() => Router.push("/add")}>
           <S.ActionTitle>Ajouter une flashcard</S.ActionTitle>
           <S.ActionDescription>
-            Ajoutez des flashcards à un chapitre.
+            Ajoutez une flashcards à un chapitre.
           </S.ActionDescription>
         </S.Action>
       </S.Actions>
