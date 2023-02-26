@@ -19,7 +19,7 @@ export default async function getCategory(req, res) {
           wrong: 0,
         },
         meta: {
-          count: flashcards.length,
+          count: flashcards.flat().length,
           name: "Toutes les catégories de Flashcard !",
           description: "La catégorie qui tue",
           slug: "/all",
