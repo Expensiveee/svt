@@ -74,7 +74,6 @@ const Home = ({ data }) => {
           style={{ border: "2px dashed #766ac4", maxWidth: "100%" }}
           onClick={() => Router.push("/all")}
         >
-          <S.ActionCount>999</S.ActionCount>
           <S.ActionTitle>
             Toutes les flashcards de tout les chapitres
           </S.ActionTitle>
