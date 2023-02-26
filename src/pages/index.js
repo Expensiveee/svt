@@ -70,7 +70,7 @@ const Home = ({ data }) => {
       </S.Title>
       <S.Actions>
         <S.Action onClick={() => Router.push("/new")}>
-          <S.ActionTitle>Crée un paquet</S.ActionTitle>
+          <S.ActionTitle>Créer un paquet</S.ActionTitle>
           <S.ActionDescription>
             Créez un paquet de flashcards pour réviser un chapitre.
           </S.ActionDescription>
