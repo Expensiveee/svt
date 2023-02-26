@@ -17,7 +17,7 @@ export default function Sidebar() {
   return (
     <SSidebar>
         <SLogo onClick={() => Router.push("/")}>
-          <h1>Flashcards d&apos;SVT</h1>
+          <h1>Normalement</h1>
           <h2>Powered by Ghali</h2>
       </SLogo>
     </SSidebar>

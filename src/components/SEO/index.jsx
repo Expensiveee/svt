@@ -1,5 +1,5 @@
 export default function SEO(){
-    const title = "Flashcards d'SVT, par Ghali";
+    const title = "Normalement, par Ghali";
     const description = 'Réviser c\'est bien, une personne qu t\'aime c\'est mieux. :/';
     
     
