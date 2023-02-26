@@ -53,11 +53,12 @@ export const SLogo = styled.div`
   }
 
   @media ${v.tablet} {
+    padding: 0 0rem;
     h1 {
       font-size: 18px;
     }
 
-    h2{
+    h2 {
       font-size: 8px;
     }
   }

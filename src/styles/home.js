@@ -138,7 +138,7 @@ export const Action = styled.div`
     width: 100%;
     max-width: 100%;
     min-width: 100%;
-    min-height: 200px;
+    min-height: 250px;
     padding: 0.5rem;
   }
 `;
