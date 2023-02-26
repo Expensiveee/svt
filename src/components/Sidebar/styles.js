@@ -10,7 +10,7 @@ export const SSidebar = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  height: 60px;
+  height: ${v.navbarHeight};
   justify-content: center;
   padding: ${v.mdSpacing} 0;
   background-color: ${v.sidebarBg};

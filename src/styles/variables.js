@@ -9,6 +9,7 @@ const sizes = {
   };
   
   export const v = {
+    navbarHeight: "64px",
     sidebarOpenWidth: "240px",
     sidebarClosedWidth: "64px",
     chatOpenWidth: "300px",
