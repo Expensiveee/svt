@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Router from "next/router";
 
 const Count = () => {
-  const bac = new Date(1679229860000);
+  const bac = new Date(1679270399);
   const now = new Date();
   const diff = bac - now;
   const [days, setDays] = useState(Math.floor(diff / (1000 * 60 * 60 * 24)));
@@ -16,7 +16,7 @@ const Count = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      const bac = new Date(1679342064000);
+      const bac = new Date(1679270399);
       const now = new Date();
       const diff = bac - now;
       setDays(Math.floor(diff / (1000 * 60 * 60 * 24)));
