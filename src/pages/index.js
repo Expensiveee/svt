@@ -44,15 +44,15 @@ const Home = ({ data }) => {
 
   return (
     <S.Container>
-      <S.Title>
-        <h1>
-          Plus que{" "}
-          <span>
-            <Count />
-          </span>{" "}
-          avant le <span>Jour J</span>.
-        </h1>
-      </S.Title>
+//       <S.Title>
+//         <h1>
+//           Plus que{" "}
+//           <span>
+//             <Count />
+//           </span>{" "}
+//           avant le <span>Jour J</span>.
+//         </h1>
+//       </S.Title>
       <S.Actions>
         <S.Action onClick={() => Router.push("/new")}>
           <S.ActionTitle>Créer un paquet</S.ActionTitle>
